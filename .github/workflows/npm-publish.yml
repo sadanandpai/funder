@@ -35,8 +35,8 @@ jobs:
       - name: setup deployment
         run: |
           npm install
-          npm run build
           rm -r build
+          npm run build
           git add build -f
           git commit -m "build files from github action"
           git push
