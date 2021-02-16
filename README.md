@@ -1,5 +1,6 @@
 # Funder
 ### A tinder styled joke application
+Responsive mobile compatible web application
 
 Live Demo: <a href="https://sadanandpai.github.io/funder/build/">Funder</a>
 
