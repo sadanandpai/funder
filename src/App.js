@@ -1,7 +1,8 @@
 import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import styled from "styled-components";
 import { useBeforeunload } from "react-beforeunload";
+import { useWindowHeight } from "@react-hook/window-size";
+import styled from "styled-components";
 
 import { setStateFromLocalStorage, fetchJokeAsync } from "./components/store/jokeSlice";
 import { jokesAPIPageNumber } from "./components/store/apiReq";
@@ -11,7 +12,7 @@ import Jokes from "./components/pages/Jokes";
 import Favorite from "./components/pages/Favorite";
 
 const Container = styled.div`
-  height: 100vh;
+  height: ${(props) => props.height + "px"};
   width: 100%;
   max-width: 400px;
   margin: auto;
@@ -25,6 +26,7 @@ const Container = styled.div`
 export default function App() {
   const state = useSelector((state) => state);
   const dispatch = useDispatch();
+  const height = useWindowHeight();
 
   useBeforeunload(() => {
     localStorage.setItem("jokes", JSON.stringify(state.jokes));
@@ -70,5 +72,5 @@ export default function App() {
     }
   }
 
-  return <Container>{getPage()}</Container>;
+  return <Container height={height}>{getPage()}</Container>;
 }
