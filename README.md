@@ -1,6 +1,8 @@
 # Funder
 ### A tinder styled joke application
 
+Live Demo: <a href="https://sadanandpai.github.io/funder/build/">Funder</a>
+
 <a href="https://sadanandpai.github.io/funder/build/">
   <img src="https://github.com/sadanandpai/funder/blob/master/cover.png" />
 </a>
