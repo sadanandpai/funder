@@ -40,7 +40,7 @@ const jokeSlice = createSlice({
           state.favorites.push(state.jokes[0]);
         }
       } else {
-        const position = state.jokes.findIndex((joke) => joke.id === payload);
+        const position = state.favorites.findIndex((joke) => joke.id === payload);
         if (position !== -1) {
           state.favorites.splice(position, 1);
         }

@@ -108,7 +108,6 @@ export default function JokeCard({ jokeText, styles, id }) {
         if (swipeStatus) {
           movementX = swipeStatus === "LEFT" ? movementX - 100 : movementX + 100;
           dispatch(setSwipeDirection(swipeStatus));
-          dispatch(onSwipe(id));
         } else {
           movementX = 0;
           setDirection(swipeStatus);
