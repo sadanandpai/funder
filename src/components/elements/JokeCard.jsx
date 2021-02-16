@@ -106,14 +106,11 @@ export default function JokeCard({ jokeText, styles, id }) {
       if (!down) {
         const swipeStatus = getSwipeStatus(direction, movementX);
         if (swipeStatus) {
-          movementX = swipeStatus === "LEFT" ? movementX - 100 : movementX + 100;
           dispatch(setSwipeDirection(swipeStatus));
         } else {
-          movementX = 0;
+          setSpring({ movementX: 0 });
           setDirection(swipeStatus);
         }
-
-        setSpring({ movementX });
       }
     },
     // Allow swipe and drag only on x axis
@@ -124,7 +121,7 @@ export default function JokeCard({ jokeText, styles, id }) {
     // Emulate the swipe like behavior when user click on like or dislike button on only top card
     if (id === state.jokes[0]?.id && state.swipeDirection) {
       setDirection(state.swipeDirection);
-      setSpring({ movementX: state.swipeDirection === "LEFT" ? -250 : 250 });
+      setSpring({ movementX: state.swipeDirection === "LEFT" ? -400 : 400 });
       dispatch(onSwipe(id));
     }
   }, [state.swipeDirection, dispatch, setSpring, id, state.jokes]);

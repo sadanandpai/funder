@@ -16,7 +16,7 @@ const BackgroundColorCard = styled.div`
 const Image = styled.img`
   width: 100%;
   height: 100%;
-  opacity: 0.8;
+  opacity: 0.6;
   -webkit-user-drag: none;
 `;
 
